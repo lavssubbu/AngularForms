@@ -1,0 +1,65 @@
+<p>formwithmodel works!</p>
+<form #empForm="ngForm" (ngSubmit)="onSubmit(empForm.value)" novalidate>
+    
+  <div class="row  px-md-4">
+    <label for="empid" class="col-sm-2 col-form-label">EmployeeID</label>
+    <div class="col-sm-10 pb-3">
+    <input type="text" id="empid" name="empid" [(ngModel)]="employee.Empid" class="form-control">
+    </div>
+    
+  </div>
+    <div class="row  px-md-4">
+    <label for="empname" class="col-sm-2 col-form-label">EmployeeName</label>
+    <div class="col-sm-10 pb-3">
+    <input type="text" id="empname" name="empname" required ngModel class="form-control">
+      
+    </div>
+  </div>
+  <div class="row  px-md-4">
+    <label for="empdept" class="col-sm-2 col-form-label">Department</label>
+    <div class="col-sm-10 pb-3">
+    <input type="text" id="empdept" name="empdept" ngModel class="form-control">
+    </div>
+  </div>
+  <div class="row  px-md-4">
+    <label for="location" class="col-sm-2 col-form-label">Location</label>
+    <div class="col-sm-10 pb-3">
+    <input type="text" id="location" name="location" ngModel class="form-control">
+    </div>
+  </div>
+  <div class="row  px-md-4">
+    <label for="domain" class="col-sm-2 col-form-label">DomainWorking</label>
+    <div class="col-sm-10 pb-3">
+    <input type="text" id="domain" name="domain" ngModel class="form-control">
+    </div>
+  </div>
+  <div class="row  px-md-4">
+    <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+    <div class="col-sm-10 pb-3">
+    <input type="text" id="salary" name="salary" ngModel class="form-control">
+    </div>
+  </div>
+  <div class="row  px-md-4">
+    <div class="col-sm-10 pb-3"> 
+    <button type="submit">Submit</button>
+    </div>
+  </div>
+  
+</form>
+
+EmployeeID : {{empForm.value.empid}} <br>
+
+EmployeeName : {{empForm.value.empname}}<br>
+
+Department : {{empForm.value.empdept}}<br>
+
+Domain : {{empForm.value.domain}}<br>
+
+Location : {{empForm.value.location}}<br>
+
+Salary : {{empForm.value.salary}}<br>
+
+{{empForm.value|json}}
+{{empForm.valid}}
+{{empForm.touched}}
+{{empForm.submitted}}
